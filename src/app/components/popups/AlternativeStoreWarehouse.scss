@@ -1,0 +1,303 @@
+@import 'sass/variables/breakpoints.scss';
+@import 'sass/variables/colours.scss';
+@import 'sass/mixins/shadows.scss';
+
+.modal-overlay {
+    align-items: flex-center;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    left: 0;
+    overflow-y: scroll;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+
+    @media screen and ($media-screen-sm-min) {
+        overflow: hidden;
+        padding: 1.2rem;
+    }
+}
+
+.modal--alternative-warehouse {
+    @include shadow-card-heavy;
+    background-color: $colour-white;
+    background-image: url('/static/assets/img/home/select-background.svg');
+    background-repeat: no-repeat;
+    background-position: 0 120px;
+    background-size: 100%;
+    display: block;
+    height: auto;
+    margin: 0;
+    min-height: 100%;
+    max-width: 100%;
+    min-width: 320px;
+    opacity: 1;
+    // overflow: hidden;
+    padding: 22px 32px 32px;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1003;
+
+    @media screen and ($media-screen-xs-min) {
+        background-position: 0 0;
+        padding: 32px;
+    }
+
+    @media screen and ($media-screen-sm-min) {
+        background-color: $colour-white;
+        border-radius: 15px;
+        height: auto;
+        margin: 100px auto auto;
+        min-height: auto;
+        pointer-events: auto;
+        position: relative;
+        width: 656px;
+    }
+
+    &::before {
+        background: $colour-grey-dark;
+        content: '';
+        display: block;
+        height: 120px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+
+        @media screen and ($media-screen-xs-min) {
+            display: none;
+        }
+    }
+
+    .ui-dialog-titlebar,
+    .ui-dialog-content {
+        pointer-events: auto;
+    }
+
+    .ui-dialog-titlebar {
+        .ui-dialog-title {
+            h1 {
+                color: $colour-white;
+                font-size: 24px;
+                font-weight: 600;
+                margin: 0 auto 22px;
+                text-align: center;
+
+                @media screen and ($media-screen-xs-min) {
+                    font-size: 32px;
+                    margin: 0 auto 32px;
+                }
+        
+                @media screen and ($media-screen-sm-min) {
+                    font-size: 34px;
+                }
+            }
+        }
+    }
+
+    .ui-dialog-content {
+        box-sizing: border-box;
+        height: calc(100% - 20px);
+        margin: 0 auto;
+        // overflow-y: scroll;
+        padding-bottom: 20px;
+        width: 270px;
+
+        @media screen and ($media-screen-xs-min) {
+            width: 340px;
+        }
+    
+        @media screen and ($media-screen-sm-min) {
+            width: 100%;
+        }
+    }
+}
+
+.alt-store-cards {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-between;
+    z-index: 5;
+    width: 250px;
+
+    @media screen and ($media-screen-xs-min) {
+        width: 320px;
+    }
+
+    @media screen and ($media-screen-sm-min) {
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+.alt-store-card {
+    @include shadow-card-heavy;
+    background: $colour-white;
+    border-radius: 6px;
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    flex-direction: column;
+    margin-bottom: 16px;
+    min-height: 173px;
+    padding: 16px;
+    position: relative;
+
+    @media screen and ($media-screen-sm-min) {
+        flex: 0 0 47%;
+        flex-direction: row;
+        margin-bottom: 0;
+        max-width: 280px;   // coz IE11 ignores box-sizing for flex children
+    }
+
+    &::before {
+        @include shadow-card-medium;
+        border-radius: inherit;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: opacity .2s ease-in-out;
+        width: 100%;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    h2 {
+        color: $colour-black;
+        font-size: 18px;
+        line-height: 1;
+        margin: 0 auto 10px;
+
+        @media screen and ($media-screen-sm-min) {
+            font-size: 24px;
+            line-height: 1.2;
+            text-align: center;
+        }
+    }
+
+    ul {
+        font-size: 14px;
+        margin-bottom: 16px;
+        line-height: 2;
+        list-style: none;
+        padding: 0 0 0 2px;
+        text-align: left;
+
+        @media screen and ($media-screen-sm-min) {
+            text-align: center;
+        }
+
+        .fa {
+            color: $colour-grey-light;
+            color: $colour-success;
+            margin-right: 5px;
+        }
+    }
+
+    .img-responsive {
+        position: absolute;
+        right: 16px;
+        width: 76px;
+        top: 46px;
+
+        @media screen and ($media-screen-xs-min) {
+            top: 16px;
+            width: 100px;
+        }
+
+        @media screen and ($media-screen-sm-min) {
+            margin: 0 auto 16px;
+            position: relative;
+            right: auto;
+            top: auto;
+            width: auto;
+        }
+    }
+
+    .btn {
+        border-radius: 6px;
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        margin: 0 auto;
+        padding: 10px 12px;
+        width: 100%;
+    }
+
+    &.disabled {
+        @include shadow-card-light;
+
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+        }
+
+        h2 {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        ul {
+            .fa {
+                color: $colour-grey-light;
+            }
+        }
+
+        .btn-default {
+            background: $colour-grey-light;
+            color: $colour-white;
+        }
+    }
+}
+
+.alt-store-card-ribbon {
+    border-radius: inherit;
+    height: 60%;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .ribbon {
+        @include shadow-light;
+        background: $colour-spritz;
+        color: $colour-white;
+        display: block;
+        height: auto;
+        pointer-events: auto;
+        position: absolute;
+        right: -38px;
+        top: 25px;
+        transform: rotate(45deg);
+        width: 150px;
+        z-index: 5;
+
+        .btn {
+            color: $colour-white;
+            display: block;
+            font-size: 9px;
+            font-weight: 600;
+            padding: 6px;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+        }
+    }
+}

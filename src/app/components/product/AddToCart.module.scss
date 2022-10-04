@@ -1,0 +1,90 @@
+
+.add {
+    small {
+        font-size: var(--font-size-caption);
+    }
+
+    :global {
+        .pack-size {
+            label {
+                font-size: var(--font-size-button);
+            }
+        }
+
+        .pack-select {
+            float: left;
+            margin: 0 3px 0 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            background: var(--grey-200);
+            color: #757575;
+            line-height: 20px;
+
+            text-align: left;
+            padding-left: 10px;
+            
+            &.selected {
+                background: #FE3824;
+                color: #FFFFFF;
+            }
+
+            &:hover {
+                background: #FE3824;
+                color: #FFFFFF;
+            }
+        }
+
+        .single-pack-size {
+            width: 100%;
+            border: none;
+            text-align: left;
+            padding-left: 10px;
+            height: 36px;
+            line-height: 36px;
+            color: #000;
+            border-radius: 3px;
+            background: var(--grey-200);
+        }
+
+        .input-number {
+            box-shadow: none;
+            font-size: var(--font-size-button);
+            &.input-pack {
+                font-weight: 400;
+            }
+        }
+
+        .input-group {
+            .input-group-btn:last-child > .btn, .form-control {
+                z-index: 0;
+            }
+        }
+
+        .btn-pack:disabled {
+            opacity: 1 !important;
+            background: var(--grey-200);
+        }
+
+        .btn.add:before {
+        opacity: 0;
+        font-family: 'FontAwesome';
+        position : absolute;
+        content: '\f00c';
+        right: -20px;
+        top: 5px;
+        transition: all 3s ease;
+        }
+
+        .btn.add:active:before {
+            opacity: 1;
+            right: 10%;
+            transition: 0s;
+        }
+
+        .btn.out-of-stock {
+            background: #c4c4c4;
+            border-color: #c4c4c4;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.field {
+    @include form-field;
+    margin-bottom: 20px;
+}
+
+.error {
+    @include form-error;
+}
+
+.hint {
+    @include form-hint;
+}
+
+.submit {
+    @include form-button-submit;
+    .progress,
+    &:disabled {
+        color: transparent;
+    }
+}

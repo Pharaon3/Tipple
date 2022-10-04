@@ -1,0 +1,35 @@
+.overlay {
+    align-items: flex-center;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    padding: 1.2rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.content {
+    display: block;
+    min-width: 320px;
+    z-index: 1003;
+    opacity: 1;
+    position: relative !important;
+    margin: auto;
+    overflow: auto !important;
+
+    @media screen and (max-width: 768px) {
+        position: fixed !important;
+    }
+    
+    :global {
+        .ui-dialog-content {
+            position: relative;
+            border: 0;
+            background: 0;
+            overflow: auto;
+            zoom: 1;
+        }
+    }
+}

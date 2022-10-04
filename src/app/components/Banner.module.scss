@@ -1,0 +1,43 @@
+
+.banner {
+    margin-bottom: 20px;
+
+    :global {
+        * { 
+            margin: 0 
+        }
+
+        body { 
+            overflow-x: hidden 
+        }
+
+        .bannerContainer {
+            max-width: 515px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .imageContainer {
+            --n: 1;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            width: 100%; // fallback
+            width: calc(var(--n)*100%);
+            height: 150px;
+            transform: translate(calc(var(--i, 0)/var(--n)*-100%));
+            
+            img {
+                width: 100%;
+                height: 150px;
+            }
+
+            a {
+                height: 150px;
+                width: 100%; // fallback
+                width: calc(100%/var(--n));
+                user-select: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.label {
+    display: flex;
+    flex-direction: row;
+    font-size: var(--font-size-h6);
+    margin-bottom: 15px;
+   
+    span {
+        color: #181818;
+        flex: 1;
+    }
+
+    strong {
+        color: $colour-black;
+        flex: 0;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+}

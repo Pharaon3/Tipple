@@ -1,0 +1,37 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.field {
+    @include form-field;
+    margin-bottom: 20px;
+}
+
+.errors {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.hint {
+    @include form-hint;
+}
+
+.submit {
+    @include form-button-submit;
+    .progress,
+    &:disabled {
+        color: transparent;
+    }
+}
+
+.forgot {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    a {
+        color: $colour-black;
+        font-size: var(--font-size-body-2);
+        font-weight: 500;
+        text-decoration: none;
+    }
+}

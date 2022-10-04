@@ -1,0 +1,31 @@
+
+.addresses {
+    margin-bottom: 25px;
+
+    strong {
+        display: block;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+}
+
+.address {
+    align-items: center;
+    border: 1px solid var(--grey-300);
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    color: var(--grey-800);
+    cursor: pointer;
+    display: flex;
+    font-size: var(--font-size-body-2);
+    margin-bottom: 10px;
+    padding: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        margin-right: 8px;
+    }
+}

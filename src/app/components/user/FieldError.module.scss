@@ -1,0 +1,6 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.error {
+    @include form-error;
+}

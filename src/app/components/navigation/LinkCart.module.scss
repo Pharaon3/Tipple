@@ -1,0 +1,19 @@
+.link {
+  display: block;
+  position: relative;
+}
+
+.cart-count {
+  background: var(--primary);
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  color: var(--white);
+  font-size: 10px;
+  height: 15px;
+  line-height: 1.4;
+  position: absolute;
+  right: -8px;
+  text-align: center;
+  top: -5px;
+  width: 15px;
+}

@@ -1,0 +1,39 @@
+.overlay {
+    align-items: flex-center;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    padding: 1.2rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+
+    .loading {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.content {
+    background: transparent;
+    display: block;
+    min-width: 320px;
+    z-index: 1003;
+    opacity: 1;
+    position: relative !important;
+    margin: auto;
+    overflow: auto !important;
+    
+    :global {
+        .ui-dialog-content {
+            background: #fff !important;
+            position: relative;
+            border: 0;
+            background: 0;
+            margin: 0 auto;
+            max-width: 320px;
+            overflow: auto;
+            zoom: 1;
+        }
+    }
+}

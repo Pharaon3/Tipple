@@ -1,0 +1,46 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+@import 'sass/mixins/tipple';
+
+.overlay {
+    @include modal-overlay;
+    overflow: auto;
+}
+
+.address-select {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    min-width: 300px;
+    height: 300px;
+    opacity: 1;
+    position: fixed !important;
+    z-index: 1003;
+    border: 1px solid var(--grey-300);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    color: var(--font-color-900);
+    
+    p {
+        position: absolute;;
+        padding: 40px;
+        text-align: center;
+        bottom: 40px;
+        font-family: Greycliff CF;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    @media screen and ($media-screen-sm-min) {
+        position: relative !important;
+        border-radius: 8px;
+    }
+}
+.verifycheck{
+    text-align: center;
+    font-size: 70px;
+    margin-top: 60px;
+}
+
+

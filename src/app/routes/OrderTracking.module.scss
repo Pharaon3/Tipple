@@ -1,0 +1,129 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+@import 'sass/animations/slow-pulse';
+@import 'sass/animations/nod';
+
+.page {
+    color: var(--grey-900);
+    padding-bottom: 0;
+    padding-top: calc(var(--navbar-height) + 15px);
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 50px;
+        padding-top: var(--navbar-height);
+    }
+}
+
+.loading {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - var(--navbar-height));
+    justify-content: center;
+
+    .driver {
+        align-items: center;
+        animation: slow-pulse 3s infinite;
+        background: var(--grey-100);
+        border-radius: 100%;
+        display: flex;
+        height: 100px;
+        justify-content: center;
+        opacity: 0.4;
+        transform: scale(1);
+        width: 100px;
+
+        > img {
+            animation: nod 1.5s linear infinite;
+            width: 50px;
+        }
+    }
+}
+
+.container {
+    @include make-container;
+    max-width: 1340px;
+}
+
+.mapContainer {
+    margin: 32px auto;
+
+    &.hasPrompt {
+        margin: 0 auto;
+    }
+}
+
+.btn {
+    display:block;
+    margin-top:32px;
+    width:100%;
+}
+
+.head {
+    padding: 8px 16px 16px 16px;
+
+    h1 {
+        display: none;
+        font-size: var(--font-size-h3);
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    .status {
+        font-size: var(--font-size-h5);
+    }
+
+    .detail {
+        font-size: var(--font-size-body-2);
+    }
+
+    .progress {
+        @include media-breakpoint-up(md) {
+            max-width: 340px;
+        }
+    }
+}
+
+.deliveryTime {
+    background: var(--primary);
+    color: var(--white);
+    padding: 18px 0;
+
+    span {
+        display: block;
+        font-size: var(--font-size-h6);
+    }
+
+    strong {
+        font-size: var(--font-size-h5);
+
+        &.shippingAddress {
+            font-size: var(--font-size-h6);
+            font-weight: 600;
+            line-height: 1.1;
+        }
+    }
+}
+
+.cart {
+    padding: 8px 0;
+
+    @include media-breakpoint-up(md) {
+        padding: 32px 0;
+    }
+}
+
+.expired {
+    font-weight: 400;
+    margin-top: 30px;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        font-weight: inherit;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}

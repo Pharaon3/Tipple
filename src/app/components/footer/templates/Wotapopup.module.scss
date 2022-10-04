@@ -1,0 +1,55 @@
+@import 'sass/_colours';
+
+.footer {
+    background: var(--grey-900);
+    padding: 24px 0;
+    clear: both;
+
+    a {
+        color: $colour-white;
+    }
+
+    a:hover {
+        color: #757575;
+        text-decoration: none;
+    }
+
+    .row-visa {
+        margin-bottom: 50px;
+        margin-top: 50px;
+
+        img {
+            margin: 2px;
+        }
+    }
+
+    .tipple-logo {
+        margin-bottom: 20px;
+    }
+}
+
+:global {
+    .footer-styled {
+        background: var(--grey-900);
+        padding: 24px 0;
+        clear: both;
+
+        a {
+            color: $colour-white;
+        }
+
+        a:hover {
+            color: #757575;
+            text-decoration: none;
+        }
+
+        .row-visa {
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+            img {
+                margin: 2px;
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+@import 'sass/_mixins';
+
+.container {
+    @include make-container;
+    height: 100%;
+    margin-bottom: 30px;
+    max-width: 1340px;
+}
+
+.bar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 8px 0;
+    position: relative;
+}
+
+.col4 {
+    @include make-col-ready;
+    @include make-col(4);
+}
+
+.nav {
+    font-weight: 500;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    font-size: 16px;
+    transition: top 0.2s;
+    line-height: 1;
+
+    .logo {
+        display: block;
+        margin: auto;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .custom-logo {
+        display: block;
+        margin: auto;
+        height: var(--logo-height);
+        padding: var(--logo-padding);
+    }
+
+    .divider {
+        background: var(--grey-200);
+        display: block;
+        height: 56px;
+        margin: 0 6px 0 12px;
+        width: 2px;
+    }
+
+    .navigation {
+        height: 72px;
+        background: var(--navbar-bg);
+
+        &.shadow {
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
+        }
+
+        &.desktopShadow {
+            box-shadow: none;
+
+            @include media-breakpoint-up(md) {
+                box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
+            }
+        }
+
+        .row {
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+
+        @media screen and ($media-screen-sm-min) {
+            .row {
+                margin-left: -12px;
+                margin-right: -12px;
+            }
+        }
+    }
+
+    .container-fluid {
+        > .row {
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    .login-button button {
+        padding: 3px 0;
+        height: 30px;
+        background: transparent;
+        text-align: center; 
+        font-weight: 200;
+    }
+
+    .navigation {
+        z-index: 1;
+    }
+
+    .account-access {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 767px) {
+        .account-menu {
+            left: -88px !important;
+            top: 39px !important;
+        }
+
+        & .logo {
+            text-align: center;
+        }
+
+        & .is-table-row a.visible-xs {
+            display: block !important;
+        }
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+    }
+
+    .options {
+        vertical-align: top;
+        padding-left: 0;
+
+        @media screen and (max-width: 480px) {
+            margin-left: -12px;
+            padding-right: 0;
+        }
+
+        @media screen and (min-width: 992px) {
+            padding-left: 12px;
+        }
+
+        @media screen and ($media-screen-sm-min) {
+            height:100%;
+            padding-right: 0;
+        }
+    }
+
+    .options-container {
+        @media screen and (max-width: 480px) {
+            margin-left: -24px;
+        }
+    }
+
+    .row.is-table-row {
+        .col-xs-4 {
+            @media screen and (max-width: 767px){
+                padding: 0;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+    }
+}
+
+.linkCart {
+    margin-left: 32px;
+}

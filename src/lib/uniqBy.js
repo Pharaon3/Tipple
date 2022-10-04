@@ -1,0 +1,2 @@
+// https://stackoverflow.com/questions/49314402/make-uniqby-with-es6
+export default (arr, fn, set = new Set()) => arr.filter(el => (v => !set.has(v) && set.add(v))(typeof fn === "function" ? fn(el) : el[fn]));

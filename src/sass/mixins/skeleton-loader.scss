@@ -1,0 +1,7 @@
+// Skeleton loaders
+@mixin skeleton-loader() {
+    animation: shimmer 4s infinite;
+    background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    border-radius: 3px;
+}

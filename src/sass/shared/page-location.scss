@@ -1,0 +1,219 @@
+@import 'sass/mixins/tipple';
+
+.pageLocation {
+    padding-bottom: 0;
+
+    @media (min-width: 1300px) {
+        :global(.container.container-wide) {
+            width: 1220px;
+        }
+    }
+
+    .shopBtn {
+        background: var(--white);
+        border-color: var(--primary);
+        color: var(--primary);
+    
+        &:hover,
+        &:active:focus {
+            background: var(--white);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: #0b2146;
+        line-height: 1.1em;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        @media screen and ($media-screen-sm-min) {
+            // margin-top: 0;
+        }
+
+        @media screen and ($media-screen-md-min) {
+            margin-bottom: 48px;
+            margin-top: 0;
+        }
+    }
+
+    h1 {
+        font-size: 45px;
+        letter-spacing: 0;
+        line-height: 48px;
+
+        @media screen and ($media-screen-sm-min) {
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 34px;
+    }
+
+    h5 {
+        font-size: 34px;
+        letter-spacing: 0;
+        line-height: 40px;
+        margin-bottom: 16px;
+    }
+
+    h6 {
+        color: $colour-spritz;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.33;
+        text-align: left;
+    }
+
+    a {
+        color: $colour-spritz;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .section {
+        position: relative;
+        padding: 40px 0 48px 0;
+
+        @media screen and ($media-screen-sm-min) {
+            padding: 72px 0 80px 0;
+        }
+
+        &.white {
+            background: $colour-white;
+        }
+    
+        &.spritz {
+            background: $colour-spritz;
+        }
+        &.spritz h1,
+        &.spritz h5,
+        &.spritz p {
+            color: $colour-white;
+        }
+    }
+
+    .header {
+        overflow: hidden;
+        padding-bottom: 37px;
+        padding-top: 0;
+        // padding-top: 200px;
+        position: relative;
+
+        @media screen and ($media-screen-sm-min) {
+            padding-top: 72px;
+        }
+
+        p {
+            color: rgba(0, 0, 0, 0.54);
+            font-size: 20px;
+        }
+    }
+
+    .headerCopy {
+        padding-bottom: 0;
+        text-align: center;
+
+        h1,
+        h3 {
+            margin-bottom: 24px;
+        }
+    }
+
+    .subheader {
+        background: #C8EAFB;
+        padding-top: 0;
+
+        @media screen and ($media-screen-sm-min) {
+            background: $colour-white;
+        }
+
+        .titleFirst {
+            margin-top: 0;
+        }
+
+        h2,
+        h3 {
+            // &:first-of-type {
+            //     margin-top: 0;
+            // }
+
+            @media screen and ($media-screen-md-min) {
+
+            }
+        }
+    }
+
+    .suburbs {
+        padding-left: 0px;
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 3;
+        letter-spacing: 0.1px;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.54);
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        text-transform: capitalize;
+
+        li {
+            flex: 0 0 100%;
+
+            @media screen and ($media-screen-sm-min) {
+                flex: 0 0 30%;
+            }
+        }
+    }
+
+    .links {
+        font-size: 20px;
+        font-style: normal;
+        font-stretch: normal;
+        font-weight: 400;
+        list-style: none;
+        line-height: 1.6;
+        padding-left: 0;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.button {
+    @include cta-shadow;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    line-height: 19px;
+    padding: 11px 33px;
+
+    &.large {
+        font-size: 18px;
+        line-height: 20px;
+        padding: 15px 18px;
+    }
+}

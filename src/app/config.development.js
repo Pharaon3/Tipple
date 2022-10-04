@@ -1,0 +1,22 @@
+export default {
+    siteRoot: 'http://localhost:3000',
+    authenticationCookie: 'tipple-token',
+    confirmedAddressCookie: 'tipple-address',
+    deviceIdentifierCookie: 'tipple-device-identifier',
+    userIdentifierCookie: 'tipple-user-identifier',
+    insecureCookies: true,
+    imageBase: "https://content.tipple.com.au/tipple",
+    authenticationURI: 'https://tipple3.tipple.xyz/api',
+    baseURI: 'https://tipple3.tipple.xyz/api',
+    googleApiKey: 'AIzaSyA6ToXBt04qLqUJzjfYuWnfL9pqAMmIgis',
+    nrLicenseKey: "5849d0b811",
+    nrApplicationID: "233991980",
+    nrReleaseName: '@@NR_RELEASE_NAME@@',
+    nrReleaseId: '@@NR_RELEASE_ID@@',
+    segmentKey: "SnAbdJoOW1pfbexM70tTuYgT11jKHfsD",
+    enableAnalytics: false,
+    liveChatLicense: "7330911",
+    defaultStorePath: "/bottleshop/victoria/melbourne",
+    defaultStoreId: 34,
+    siteId: 1
+}

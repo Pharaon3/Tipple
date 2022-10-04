@@ -1,0 +1,92 @@
+@import 'sass/variables/colours.scss';
+
+.container {
+  text-align: center;
+  color: var(--black);
+}
+
+.helpText {
+  color: $colour-spritz;
+}
+
+hr {
+  border-top: 2px solid var(--grey-200);
+}
+
+.verifyBtn {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-width: 0px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 280px;
+  height: 44px;
+  padding: 6px 64px;
+  margin: 0px auto;
+  opacity: 1;
+}
+.divBtn {
+  width: 100px;
+  height: 30px;
+  background-color: black;
+}
+.btnDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  flex: 1 0 auto;
+  order: 0;
+  top: 13.64%;
+  bottom: 13.64%;
+}
+
+.btnDivDiv {
+  position: static;
+  flex: 0 0 auto;
+  order: 0;
+  margin: 0px 8px;
+  width: 22px;
+  height: 25px;
+  top: 0px;
+  left: 0px;
+}
+.btnDivDivImg {
+  flex: 0 0 auto;
+  margin: 0px 8px;
+  order: 0;
+}
+.btnDivSpan {
+  font-family: MarkOffcForMC-Medium, &quot;
+  font-size: 15px;
+  line-height: 18px;
+  align-items: center;
+  flex: 0 0 auto;
+  order: 1;
+  margin: 0px 16px;
+  color: white;
+}
+
+.verifyMyIdBtn {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 280px;
+  height: 44px;
+  padding: 6px 64px;
+  margin: 0px auto;
+  opacity: 1;
+}
+.VMDspan {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.verifyMyIdBtn :hover {
+  color: rgb(26, 26, 26);
+  font-weight: bold;
+}

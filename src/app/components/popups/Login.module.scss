@@ -1,0 +1,39 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+@import 'sass/mixins/tipple';
+
+.overlay {
+    @include modal-overlay;
+}
+
+.content {
+    display: block;
+    min-width: 320px;
+    z-index: 1003;
+    opacity: 1;
+    position: relative !important;
+    margin: auto;
+    overflow: auto !important;
+
+    @media screen and (max-width: 768px) {
+        position: fixed !important;
+
+    }
+
+    input {
+        margin: 16px 0 0;
+    }
+
+    input:focus {
+        border-bottom: 1px solid #373a3c!important;
+    }
+
+    label {
+        top: 6px !important;
+
+        &.touched {
+            transform: translateY(-20px);
+            font-size: 11px;
+        }
+    }
+}

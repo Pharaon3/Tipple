@@ -1,0 +1,27 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.actions {
+    padding: 15px;
+
+    @include media-breakpoint-up(md) {
+        bottom: 0;
+        margin-left: 0;
+        padding: 0;
+        position: absolute;
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-submit {
+    @include form-button-submit;
+    width: calc(100% - 64px);
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "webcredentials": {
+    "apps": [
+      "2TB3RFCHP8.au.com.tipple.courier",
+      "2TB3RFCHP8.com.TippleGroup"
+    ]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2TB3RFCHP8.au.com.tipple.courier",
+        "paths": ["/driver/*"]
+      },
+      {
+        "appID": "2TB3RFCHP8.com.TippleGroup",
+        "paths": ["NOT /driver/*", "/", "/forgot-password/*", "/bottleshop/*", "/product/*", "/corporate"]
+      }
+    ]
+  }
+}

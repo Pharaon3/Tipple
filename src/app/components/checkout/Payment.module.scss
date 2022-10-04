@@ -1,0 +1,22 @@
+.payment {
+    padding-bottom: 90px;
+    position: relative;
+    
+    :global {
+        .braintree-method:focus {
+            outline:0 !important;
+        }
+
+        .braintree-method__label {
+            font-size: var(--font-size-body);
+        }
+
+        .braintree-method .braintree-method__label .braintree-method__label--small {
+            font-size: var(--font-size-body-2);
+        }
+
+        .dropin-container * {
+            font-family: "Greycliff", Arial, sans-serif !important;
+        }
+    }
+}

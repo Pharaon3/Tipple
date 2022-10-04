@@ -1,0 +1,17 @@
+.wrap {
+    h1 {
+        font-size: var(--font-size-h4);
+    }
+
+    h2 {
+        font-size: var(--font-size-h5);
+    }
+
+    h3 {
+        font-size: var(--font-size-h6);
+    }
+}
+
+.content-height {
+    min-height: 200px !important;
+}

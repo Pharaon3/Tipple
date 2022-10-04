@@ -1,0 +1,67 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+@import 'sass/mixins/tipple';
+
+.overlay {
+    @include modal-overlay;
+}
+
+.referral {
+    display: block;
+    min-width: 320px;
+    z-index: 1003;
+    opacity: 1;
+    margin: auto;
+    position: fixed !important;
+    overflow: auto !important;
+
+    @media screen and ($media-screen-sm-min) {
+        position: relative !important;
+    }
+    
+    input {
+        width: 100%;
+        font-size: 20px;
+        line-height: 28px;
+        color: var(--primary);
+        text-align: center;
+        height: 38px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        border: solid 1px #eeeeee;
+
+        &.code {
+            text-align: left;
+            padding: 10px;
+            font-size: 17px;
+        }
+    }
+    
+    .title {
+        color: var(--primary);
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+    }
+    
+    .terms {
+        color: #757575;
+        font-size: 12px;
+        text-decoration: underline;
+    }
+}
+
+.label {
+    position: absolute;
+    font-weight: bold;
+    right: 19px;
+    top: 19px;
+    color: #757575;
+    cursor: pointer;
+}
+
+.facebook {
+    background-color: #3b5998;
+    border: 1px solid #3b5998;
+    margin-top: 15px;
+}

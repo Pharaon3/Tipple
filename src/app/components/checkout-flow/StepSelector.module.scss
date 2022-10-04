@@ -1,0 +1,122 @@
+@import 'sass/_mixins';
+@import 'sass/_colours';
+
+$colour-disabled: rgba(0, 0, 0, 0.2);
+$colour-disabled-hover: rgba(0, 0, 0, 0.4);
+$colour-complete: rgba(0, 0, 0, 0.6);
+
+.wrap {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  &::after {
+    background: var(--primary);
+    bottom: -1px;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+    width: 33.333333%;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-bottom: 2px solid #eee;
+
+    &::after {
+      bottom: -2px;
+      height: 2px;
+    }
+  }
+
+  &.step-2 {
+    &::after {
+      transform: translateX(100%);
+    }
+  }
+
+  &.step-3 {
+    &::after {
+      transform: translateX(200%);
+    }
+  }
+}
+
+.step {
+  align-items: center;
+  color: $colour-disabled;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: var(--font-size-caption);
+  height: 60px;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    font-size: var(--font-size-body);
+    height: 90px;
+  }
+
+  &.complete,
+  &.available {
+    color: $colour-complete;
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    color: var(--primary);
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    &.active,
+    &.complete,
+    &.available {
+      img {
+        opacity: 1;
+      }
+    }
+
+    img {
+      opacity: 0.6;
+    }
+  }
+
+  img {
+    margin-bottom: 0;
+    margin-top: 15px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    width: 17px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 10px;
+      margin-top: 15px;
+      width: auto;
+    }
+  }
+}
+
+// This is updated part
+.stepLabel {
+  color: $colour-disabled;
+
+  &.complete,
+  &.available {
+    color: $colour-complete;
+  }
+
+  &.active {
+    color: var(--primary);
+  }
+}

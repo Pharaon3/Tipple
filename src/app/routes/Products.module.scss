@@ -1,0 +1,286 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+// TODO: Move this to styles for the Page component so it is global.
+// TODO: Kill the content-wrapper class, or use it only in the Page component.
+.page {
+    height: 100%;
+    // FIXME TEMP: Removed for now for mobile product search to be hidden. To be refactored later.
+    // margin-top: 55px;
+
+    // @include media-breakpoint-up(md) {
+    //     margin-top: 0;
+    // }
+}
+
+.wrap {
+    height: 100%;
+}
+
+.container {
+    @include make-container;
+    max-width: 1340px;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.title {
+    // TODO: Uncomment when filters are updated
+    // border-bottom: 2px solid $colour-grey-underline;
+    color: $colour-text-dark;
+    margin: 0 0 30px;
+    padding-right: 50px;
+    padding-top: 20px;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 30px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: var(--font-size-h4);
+        margin-top: 0;
+
+        @include media-breakpoint-up(md) {
+            font-size: var(--font-size-h2);
+            width: 90%;
+        }
+    }
+
+    .back {
+        color: $colour-text-dark;
+        cursor: pointer;
+        font-size: 14px;
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+        top: 30px;
+
+        @include media-breakpoint-up(sm) {
+            top: 40px;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+            top: 50px;
+        }
+    
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+            top: 70px;
+        }
+
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+.search {
+    margin-bottom: 12px;
+
+    .row {
+        @include make-row;
+    }
+
+    .col {
+        @include make-col-ready;
+        @include make-col(6);
+    }
+
+    .dropdown {
+        :global {
+            .ui-dropdown-trigger {
+                background: var(--white);
+                padding: 16px 8px;
+            }
+        }
+    }
+
+    .stretch {
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .col-search {
+        flex: 0;
+        padding: 0;
+
+        @include media-breakpoint-up(md) {
+            flex: inherit;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    .col-search-wide {
+        max-width: 75%;
+    }
+
+    .col-right {
+        flex-grow: 1;
+        max-width: 100%;
+
+        @include media-breakpoint-up(md) {
+            flex-grow: 0;
+            max-width: 50%;
+        }
+    }
+
+    .col-sort-narrow {
+        max-width: 100%;
+
+        @include media-breakpoint-up(md) {
+            max-width: 25%;
+        }
+    }
+
+    :global {
+        .product-search {
+            background: #fff;
+            border-radius: 4px !important;
+            border: 1px solid #eee;
+    
+            .search-button {
+                color: var(--primary);
+            }
+    
+            input{
+                width: 100%;
+                background: #fff;
+                height: 54px;
+                font-size: 20px;
+                border-top: none;
+                border-left: none;
+                border-bottom: none;
+                border-right: 2px solid #FAFAFA;
+                padding: 0 20px;
+                color: #757575;
+
+                &::-moz-placeholder,
+                &:-ms-input-placeholder,
+                &::-webkit-input-placeholder,
+                &::-moz-placeholder {
+                    color: #757575;
+                }
+            }
+    
+            @media screen and (max-width: 767px) {
+                display: none;
+                position: fixed;
+                top: var(--navbar-height);
+                left: 0;
+                right: 0;
+                z-index: 998;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    
+                &.hidden {
+                    top: 0;
+                }
+            }
+        }
+    
+        div.search-menu > product-search > p-autocomplete > span > div  {
+            height: initial;
+            vertical-align: middle;
+            top: 45px !important;
+            width: 113% !important;
+            left: -12px !important;
+            border-radius: 2px !important;
+        }
+    
+        .search-menu {
+            display: block;
+        }
+        
+    
+        .search-product-items {
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 5px;
+            > div {
+                padding-left: 10px !important;
+            }
+        }
+    
+        .search-button {
+            cursor: pointer;
+            text-align: center;
+            height: 54px !important;
+            padding: 15px;
+            background: #fff;
+        }
+    }
+}
+
+.search-results {
+    height: 100%;
+}
+
+.row {
+    @include make-row;
+    margin: 0;
+}
+
+.ssr-row {
+    @include make-row;
+}
+
+.product-list {
+    min-height: 50vh;
+    padding: 0px;
+
+    .auto-sizer {
+        height: 100% !important;
+    }
+    .product-virtual-list {
+        height: 100% !important;
+        overflow: hidden !important;
+        > div {
+            overflow: hidden;
+        }
+    }
+
+    &.no-products {
+        min-height: auto;
+    }
+}
+
+.product-row {
+    overflow: hidden;
+}
+
+.loading {
+    position: absolute;
+    width: 100%;
+}
+
+.product {
+    @include make-col-ready;
+    @include make-col(6);
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(3);
+    }
+
+    @include media-breakpoint-up(xl) {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}

@@ -1,0 +1,16 @@
+.btn-black {
+    background: var(--black) !important;
+    border-color: var(--black) !important;
+    color: var(--white) !important;
+    width: 200px;
+
+    &:hover {
+        background: var(--grey-900) !important;
+    }
+}
+
+.top {
+    background: repeating-linear-gradient(var(--primary), var(--primary) 90.1%, #ffffff 9.9%, #ffffff 100%);
+    padding-bottom: 0;
+    padding-top: 36px;
+}

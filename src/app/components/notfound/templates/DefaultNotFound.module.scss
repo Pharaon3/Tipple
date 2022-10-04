@@ -1,0 +1,50 @@
+
+
+.notfound {
+    :global {
+        .not-found {
+            height: 90vh;
+            color: #34495e;
+            
+            .tagline {
+                line-height: 45px;
+            }
+            .sub-tagline {
+                line-height: 30px;
+                font-weight: normal;
+            }
+            .go-to-homepage{
+                margin-top: 15px;
+                padding: 10px 15px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .go-to-homepage{
+                width: 200px;
+            }
+            .not-found{
+                background-size: 100% 100%;
+                background: url('/static/assets/img/page404.png') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                .row{
+                    margin-top: 40vh;
+                }
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .go-to-homepage{
+                width: 100%;
+            }
+            .not-found{
+                background: #B7D6DA;
+                padding-top: 25vh;
+                padding-bottom: 25vh;
+            }
+        }
+    }
+}

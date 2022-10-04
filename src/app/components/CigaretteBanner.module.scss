@@ -1,0 +1,61 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+
+.banner {
+    align-items: center;
+    background: #221e1f;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+    margin: 0 auto 30px;
+    width: 100%;
+
+    @media screen and ($media-screen-xs-min) {
+        width: 430px;
+    }
+
+    @media screen and ($media-screen-sm-min) {
+        height: 120px;
+        width: 640px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 1.1;
+
+        @media screen and ($media-screen-xs-min) {
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        @media screen and ($media-screen-sm-min) {
+            font-size: 16px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        height: 100%;
+        max-height: 100%;
+    }
+
+    .copy {
+        flex: 1;
+        padding: 10px;
+
+        @media screen and ($media-screen-xs-min) {
+            padding: 15px 20px;
+        }
+    }
+}
+
+

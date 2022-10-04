@@ -1,0 +1,38 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+
+.back {
+    color: white;
+    right: 20px;
+    bottom: -80px;
+    border: none;
+    padding: 20px;
+    position: fixed;
+    z-index: 999;
+    background: var(--primary);
+    border-radius: 50%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    font-weight: 100;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+
+    &.active {
+        bottom: 20px;
+        right: 80px;
+    }
+
+    i {
+        position: absolute;
+        top: calc(50% - 13px);
+        left: calc(50% - 12px);
+        font-size: 26px;
+        font-weight: 100;
+    }
+
+    &:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+    }
+}

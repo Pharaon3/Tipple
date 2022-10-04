@@ -1,0 +1,12 @@
+@import 'sass/_mixins';
+
+.privacy {
+  @include make-col-ready;
+  @include make-col(12);
+  margin: 24px 0px;
+  text-align: center;
+  font-size: var(--font-size-caption);
+}
+.grey {
+  color: #262626;
+}

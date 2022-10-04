@@ -1,0 +1,53 @@
+.wrap {
+    :global {
+        .back-to-shop {
+            display: block;
+            font-weight: 600;
+            border: 1px solid var(--primary-500);
+            border-radius: 6px;
+            color: var(--primary-500);
+            padding: 10px 16px;
+            text-align: center;
+            width: 100%;
+            &:hover {
+                background: var(--primary-500);
+                color: #ffffff;
+                text-decoration: none;
+            }
+        }
+    
+        .cart-item-holder {
+            border-top: 1px solid var(--grey-200);
+        }
+    
+        .subtotals {
+            color: #757575;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.1px;
+    
+            .row {
+                padding: 4px 0px;
+            }
+        }
+    
+        .subcharge {
+            color: var(--primary-500);
+        }
+    
+        hr {
+            border-top: 1px solid #e0e0e0;
+        }
+    
+        .form-material .error-message {
+            padding: 5px 10px;
+            background: #f44336;
+            color: #fff !important;
+            border-radius: 3px;
+        }
+    
+        .delivery-date-text {
+            color: #0a2146 !important;
+        }
+    }
+}

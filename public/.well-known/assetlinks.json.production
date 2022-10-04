@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.tipple",
+    "sha256_cert_fingerprints":
+    ["71:24:2A:51:18:60:C2:54:91:F8:28:0C:26:B7:33:60:26:B9:8C:56:56:6E:F7:27:50:21:9A:87:D1:17:73:91"]
+  }
+}]

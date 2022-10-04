@@ -1,0 +1,55 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.comments {
+    margin: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-submit {
+    @include form-button-submit;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    width: calc(100% - 64px);
+
+    &:hover,
+    &:focus {
+        background-color: var(--primary-600);
+        border-color: var(--primary-500);
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+    }
+}
+
+.btn-cancel {
+    @include form-button-cancel;
+    display: none;
+    margin-right: 24px;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+}
+
+.address-selector {
+    padding-top: 20px;
+}
+
+.errors {
+    @include make-col-ready;
+    @include make-col(12);
+}
+
+.error {
+    background: $colour-danger;
+    border-radius: 3px;
+    color: $colour-white;
+    margin: 0 auto 15px;
+    padding: 5px 10px;
+}

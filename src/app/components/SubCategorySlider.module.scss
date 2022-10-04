@@ -1,0 +1,106 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.subcategories {
+    width: 100%;
+}
+
+.slider {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.wrap {
+    @include overflow-container;
+}
+
+.slider-mobile {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: -15px;
+}
+
+.category {
+    @include make-col-ready;
+    outline: none;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &.mobile {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.slick-slider {
+    :global {
+        .slick-track {
+            margin-left: 0;
+        }
+
+        .slick-disabled {
+            opacity: 0.4;
+        }
+
+        .slick-arrow:before {
+            display: none;
+        }
+    }
+}
+
+.slick-arrow {
+    align-items: center;
+    cursor: pointer;
+    display: none;
+    font-size: 0;
+    height: 40px;
+    justify-content: center;
+    line-height: 0;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    width: 40px;
+    transform: none;
+    z-index: 10;
+
+    @include media-breakpoint-up(lg) {
+        display: flex !important;
+    }
+
+    &.is-next {
+        right: -18px;
+
+        @include media-breakpoint-up(xl) {
+            right: -25px;
+        }
+
+        @media (min-width: 1400px) {
+            right: -40px;
+        }
+    }
+
+    &.is-prev {
+        left: -18px;
+
+        @include media-breakpoint-up(xl) {
+            left: -25px;
+        }
+
+        @media (min-width: 1400px) {
+            left: -40px;
+        }
+    }
+
+    i {
+        color: $colour-text-dark;
+        font-size: 28px;
+    }
+}

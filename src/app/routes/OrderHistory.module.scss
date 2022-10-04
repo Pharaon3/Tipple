@@ -1,0 +1,34 @@
+.wrap {
+    margin-bottom: 20px;
+
+    :global {
+        .tipple-select .ui-dropdown-trigger {
+            padding: 12px 6px !important;
+            color: #212121;
+        }
+
+        .tipple-select .ui-dropdown-trigger .fa {
+            margin-top: 0 !important;
+        }
+
+        .cart-input-container {
+            margin-top: 15px;
+            display: flex;
+            font-weight: bold;
+
+            > span {
+                line-height: 24px;
+                width: 130px;
+            }
+
+            > input {
+                line-height: 22px;
+                flex-grow: 1;
+            }
+        }
+
+        .bb {
+            border-bottom: 1px solid #e0e0e0;
+        }
+    }
+}

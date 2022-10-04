@@ -1,0 +1,47 @@
+@import 'sass/_mixins';
+
+.survey {
+    padding: 30px 0;
+    width: 100%;
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin: 0 auto;
+        width: 50%;
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.header {
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    background: none;
+    border: 0;
+    color: var(--grey-700);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 2px 10px;
+
+    &.cta {
+        color: var(--primary);
+        font-weight: bold;
+        text-decoration: none;
+    }
+}

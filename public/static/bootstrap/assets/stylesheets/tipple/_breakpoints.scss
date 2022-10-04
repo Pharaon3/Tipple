@@ -1,0 +1,14 @@
+.hidden-xxl {
+    @media screen and (max-width: 1349px) {
+        display: none;
+    }
+}
+
+.visible-xxl {
+    @media screen and (max-width: 1349px) {
+        display: block;
+    }
+    @media screen and (min-width: 1350px) {
+        display: none;
+    }
+}

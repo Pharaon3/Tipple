@@ -1,0 +1,91 @@
+.loading-overlay {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: #f57153;
+
+    display: table;
+
+    img {
+        width: 120px;
+    }
+
+    span {
+        vertical-align: middle;
+        display: table-cell;
+    }
+}
+
+.loading-overlay-transparent {
+    &.orange {
+      background-color: rgba(245,113,83,0.85);
+      display: table;
+    }
+
+    .message {
+      display: table-cell; vertical-align: middle;
+      color: #ffffff;
+    }
+
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+
+    display: table;
+
+    span {
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+}
+
+.fadein {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+   -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+       animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

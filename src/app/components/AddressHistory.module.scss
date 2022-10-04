@@ -1,0 +1,10 @@
+@import 'sass/variables/colours';
+@import 'sass/mixins/tipple';
+
+.address {
+    @include cta-shadow-hover;
+    @include delivery-address;
+    cursor: pointer;
+    font-size: var(--font-size-body-2);
+    margin-bottom: 12px;
+}

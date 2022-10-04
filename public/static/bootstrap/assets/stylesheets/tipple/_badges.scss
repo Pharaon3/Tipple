@@ -1,0 +1,8 @@
+.badge {
+    padding: 3px 7px 5px;
+    font-weight: 200;
+    
+    &:not(:last-child) {
+      margin-right: 3px;
+    }
+}

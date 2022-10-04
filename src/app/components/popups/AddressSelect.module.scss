@@ -1,0 +1,201 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+@import 'sass/mixins/tipple';
+
+.overlay {
+    @include modal-overlay;
+    overflow: auto;
+}
+
+.address-select {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    min-width: 500px;
+    opacity: 1;
+    // overflow: visible !important;
+    position: fixed !important;
+    z-index: 1003;
+    border: 1px solid var(--grey-300);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    color: var(--font-color-900);
+    
+    @media screen and ($media-screen-sm-min) {
+        position: relative !important;
+        border-radius: 8px;
+    }
+
+    & > header {
+        flex: none;
+        display: flex;
+        flex-direction: row;
+        padding: 12px 16px;
+        align-items: center;
+        border-bottom: 1px solid var(--grey-300);
+
+        & > span {
+            flex: auto;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 100%;
+            
+        }
+
+        & > button {
+            flex: none;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            appearance: none;
+            border: 1px solid var(--grey-200);
+            border-radius: 100%;
+            background-color: var(--white);
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+
+            & > i {
+                color: var(--primary);
+                font-size: 30px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    & > div {
+        flex: auto;
+        min-height: initial;
+        padding: 24px 16px;
+        
+        @media screen and ($media-screen-sm-min) {
+            flex: none;
+            min-height: 400px;
+        }
+        
+        & > p {
+            margin: 0 0 32px 0;
+            text-align: center;
+        }
+    }
+
+    & > footer {
+        flex: none;
+        padding: 24px 16px;
+        display: flex;
+        border-top: 1px solid var(--grey-300);
+
+        & > button {
+            height: 48px;
+            width: 100%;
+        }
+    }
+}
+
+.search-address {
+    display: block;
+    appearance: none;
+    border-radius: 4px;
+    border: 1px solid var(--grey-300);
+    padding: 12px 14px;
+    width: 100%;
+    
+}
+
+.search-address-success {
+    border: 1px solid var(--success-600);
+}
+
+.search-address-unavailable {
+    border: 1px solid var(--danger-600);
+}
+
+.autocomplete-dropdown-container {
+    margin: 0 0 32px 0;
+    position: relative;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.autocomplete-dropdown {
+    position: absolute;
+    z-index: 1010;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid var(--grey-300);
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.suggestion-item {
+    cursor: default;
+    padding: 0 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    text-align: left;
+    border-top: 1px solid var(--grey-200);
+    font-size: 11px;
+    color: var(--grey-500);
+
+    &:first-child {
+        border-top: none;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+}
+
+.suggestion-item-marker {
+    width: 15px;
+    height: 20px;
+    margin-right: 7px;
+    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+    background-size: 34px;
+    background-position: -1px -161px;
+}
+
+.suggestion-item-query {
+    font-size: 13px;
+    padding-right: 3px;
+    color: var(--black);
+}
+
+.error-message {
+    color: var(--danger-600);
+}
+
+.alt-option {
+    text-align: center;
+}
+
+.alt-option-title {
+    font-size: 16px;
+    margin: 0 0 16px 0;
+}
+
+.alt-option-description {
+    text-align: center;
+}
+
+.alt-option-link {
+    appearance: none;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--primary);
+    margin-top: 24px;
+    text-decoration: underline;
+}

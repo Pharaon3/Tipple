@@ -1,0 +1,52 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.field {
+    @include form-field;
+    margin-bottom: 20px;
+
+    input[type=checkbox] + label {
+        margin-left: 30px;
+        padding-top: 2px;
+
+        &::before {
+            position: absolute;
+            left: -28px;
+        }
+    }
+}
+
+.checkboxes {
+    margin-top: 50px;
+
+    .field {
+        &:not(:last-of-type) {
+            margin-bottom: 0;
+        }
+    }
+
+    .error {
+        margin-bottom: 20px;
+        margin-top: -15px;
+
+        // FIXME: This is hacky. Shouldn't be aware of the internal HTML structure of FieldError component. Find a better way.
+        > div {
+            &:first-of-type {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.errors {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.hint {
+    @include form-hint;
+}
+
+.submit {
+    @include form-button-submit;
+}

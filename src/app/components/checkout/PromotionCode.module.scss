@@ -1,0 +1,51 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.promotion {
+    padding: 4px 0;
+}
+
+.code {
+    margin-top: 20px;
+}
+
+.have-promo {
+    color: var(--primary);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    text-align: left;
+
+    &.remove {
+        font-size: 12px;
+    }
+
+    &:hover {
+        font-weight: 600;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 12px;
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 0;
+    }
+}
+
+.input {
+    flex: 1 1 70%;
+
+    > input {
+        height: 100%;
+    }
+}
+
+.button {
+    padding: 0;
+    flex: 1 0 30%;
+}

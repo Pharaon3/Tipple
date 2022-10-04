@@ -1,0 +1,10 @@
+{
+  "theme": {
+    "name": "7Eleven",
+    "homeComponent": "7Eleven",
+    "footerComponent": "7Eleven",
+    "cssURL": "/static/assets/theme/7eleven/7eleven.css",
+    "faviconURL": "/static/assets/theme/7eleven/favicon.ico",
+    "headerLogoURL": "/static/assets/theme/7eleven/logo.png"
+  }
+}

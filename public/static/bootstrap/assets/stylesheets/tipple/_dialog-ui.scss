@@ -1,0 +1,58 @@
+.ui-dialog {
+    max-width: 320px;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 4px;
+
+    @media screen and (max-width: 768px) {
+        position: fixed;
+        top: 0px !important;
+        left: 0px !important;
+        right: 0px;
+        bottom: 0px;
+        width: 100% !important;
+        max-width: 100%;
+        border: 0;
+        border-radius: 0;
+        overflow: scroll;
+        min-width: 100% !important;
+    }
+
+    .ui-dialog-titlebar {
+        
+        padding: 0;
+
+        .ui-dialog-title {
+            text-align: center;
+            width: 100%;
+            h1 {
+                margin: 0;
+                color: #F57153;
+                font-size: 20px;
+                margin-top: 10px;
+            }
+        }
+
+        .ui-dialog-titlebar-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    }
+
+    .ui-widget-content {
+        padding: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 16px;
+    }
+
+    p-footer{
+      button {
+        font-size: 16px;
+      }
+    }
+
+    a.grey-link {
+        color: #BDBDBD;
+    }
+}

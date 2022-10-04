@@ -1,0 +1,303 @@
+.form-material {
+
+    div.field {
+        position: relative;
+
+        label {
+            position: absolute;
+            left: 0;
+            top: 28px;
+            font-weight: 400;
+            color: #373a3c;
+        }
+        &.error-message{
+            font-size: 16px;
+            margin-top: 5px;
+            color: #f44336;
+        }
+
+        input + label {
+            top: 12px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    input {
+        margin: 24px 0px;
+        width: 100%;
+        display: block;
+        border: none;
+        padding: 13px 0;
+        padding-bottom: 8px;
+        border-bottom: solid 1px #757575;
+        transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+        background: linear-gradient(to bottom, #373a3c, #F57153 4%);
+        background-position: -100vw 0;
+        background-size: 100vw 100%;
+        background-repeat: no-repeat;
+        color: #373a3c;
+
+        &:focus ~ label,
+        .ng-valid ~ label  {
+          font-size: 11px;
+          transform: translateY(-20px);
+          transition: all 0.5s;
+          color: #373a3c;
+        }
+
+        &:focus {
+            border-bottom: solid 1px #373a3c !important;
+        }
+
+        &.ng-valid.ng-touched ~ label, &.ng-valid.ng-dirty.ng-touched ~ label  {
+          transform: translateY(-20px);
+          font-size: 11px;
+        }
+
+        &.ng-invalid.ng-dirty.ng-touched ~ label{
+          transform: translateY(-20px);
+          font-size: 11px;
+        }
+
+        &.ng-untouched {
+            border-color: #757575;
+        }
+
+        &.invalid + label {
+            color: $brand-danger;
+        }
+
+    }
+
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+
+    input[type=checkbox], input[type=radio] {
+        overflow: initial;
+    }
+
+    input[type=checkbox]  {
+        display: none;
+
+        & + label {
+            display: block;
+            position: relative;
+            font-weight: 400;
+            margin: 8px 8px 8px 0px;
+            color:  #373a3c;
+            font-size: 16px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        & + label:before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #757575;
+            border-radius: 2px;
+            margin: 0px 16px 0px 0px;
+            top: 4px;
+        }
+
+        &:checked + label:before {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #F57153;
+            background-color: #F57153;
+            animation: ripple-stay 1.5s ease-out;
+        }
+
+        &:checked + label:after {
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-family: "Material Icons";
+            color:white;
+            content: "\e876"; /* Tick */
+            font-size: 18px;
+        }
+    }
+
+    input[type=radio]  {
+        display: none;
+
+        & + label {
+            display: block;
+            position: relative;
+            font-weight: 400;
+            margin: 8px 8px 8px 0px;
+            color:  #373a3c;
+            font-size: 16px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        & + label:before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #757575;
+            border-radius: 100%;
+            margin: 0px 8px 0px 0px;
+            top: 4px;
+        }
+
+        &:checked + label:before {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #F57153;
+            animation: ripple-stay 1.5s ease-out;
+        }
+
+        &:checked + label:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #F57153;
+            border-radius: 100%;
+            position: absolute;
+            left: 5px;
+            top: 9px;
+        }
+
+    }
+
+    textarea {
+        resize: none;
+        margin: 12px 0px;
+        width: 100%;
+        border: none;
+        padding: 16px 0;
+        border-bottom: solid 1px $input-border;
+        background-repeat: no-repeat;
+        color: #212121;
+        outline:0px !important;
+        -webkit-appearance:none;
+
+
+        &.invalid:focus,
+        &.ng-valid:focus,
+        &:focus {
+          transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+          background: linear-gradient(to bottom, #373a3c, #F57153 4%);
+          transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+          background-position: -100vw 0;
+          background-size: 100vw 100%;
+          background-repeat: no-repeat;
+          ~ label {
+            font-size: 11px;
+            transform: translateY(-20px);
+            transition: all 0.5s;
+            color: #373a3c;
+          }
+        }
+
+        &.ng-invalid, &.ng-valid {
+            border-color: $brand-danger;
+            background: linear-gradient(to bottom, #373a3c, $brand-danger 4%);
+            background-position: -100vw 0;
+            background-size: 100vw 100%;
+            background-repeat: no-repeat;
+        }
+        &.ng-valid.ng-dirty.ng-touched  ~ label{
+          transform: translateY(-20px);
+          font-size: 11px;
+        }
+        &.ng-invalid.ng-dirty.ng-touched  ~ label{
+          transform: translateY(-20px);
+          font-size: 11px;
+        }
+        &.ng-untouched {
+            border-color: $input-border;
+        }
+
+        &.invalid + label {
+            color: $brand-danger;
+        }
+    }
+}
+
+.add-cursor-pointer {
+    cursor: pointer;
+}
+
+.error-text {
+        color: $brand-danger;
+}
+
+/*
+Hosted Fields For BRAINTREE styling
+*/
+
+.input {
+  width: 100%;
+  height: 50px;
+  display: block;
+  border: none;
+  padding: 21px 0 5px 0;
+  border-bottom: solid 1px #757575;
+  transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+  border-bottom: solid 1px #757575;
+  background-position: -100vw 0;
+  background-size: 100vw 100%;
+  background-repeat: no-repeat;
+  color: #373a3c;
+  margin: 24px 0 0 0;
+  cursor: text;
+  font-size: 16px !important;
+  label {
+    margin-bottom: -10px;
+  }
+}
+
+.hosted-field {
+    font-size: 16px !important;
+}
+
+.braintree-hosted-fields-focused {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+  color: $input-border;
+  font-size: 11px;
+  transform: translateY(-20px);
+  visibility: visible;
+  transition: all 0.5s;
+  width: 100%;
+}
+
+
+
+
+
+.braintree-hosted-fields-invalid {
+  background-position: -100vw 0;
+  background-size: 100vw 100%;
+  background-repeat: no-repeat;
+
+
+}
+
+.btn-cancel {
+  background: #ffffff;
+  color: #f57153;
+  border: solid 1px #f57153;
+}

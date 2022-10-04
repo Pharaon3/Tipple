@@ -1,0 +1,71 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.collection {
+    @include collection-container(true);
+}
+
+.title {
+    @include collection-title;
+    margin: 0 0 30px;
+}
+
+.wrap {
+    @include overflow-container;
+}
+
+.slider {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.tile {
+    @include shadow-elevation;
+    align-items: center;
+    background: $colour-card-bg;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    height: 100px;
+    justify-content: center;
+    margin-right: 15px;
+    padding: 10px;
+    position: relative;
+    width: 150px;
+
+    @include media-breakpoint-up(sm) {
+        // height: 354px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: 130px;
+        margin-right: 36px;
+        width: 195px;
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    img {
+        left: 0;
+        max-height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .text {
+        @include text-med;
+        color: $colour-text-dark;
+        font-weight: 700;
+        word-break: break-all;
+    }
+}

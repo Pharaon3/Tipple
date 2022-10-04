@@ -1,0 +1,63 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.checkout {
+  margin: 0;
+
+  :global {
+    .left-container {
+      padding: 24px;
+
+      .title {
+        color: var(--primary);
+        font-size: var(--font-size-h6);
+        font-weight: 700;
+      }
+    }
+
+    .section-no-padding {
+      padding: 0px;
+    }
+
+    .ui-inputtext {
+      border-bottom: solid 1px var(--grey-300) !important;
+    }
+
+    label span {
+      color: var(--primary);
+    }
+
+    .braintree-heading[data-braintree-id='methods-label'],
+    .braintree-heading[data-braintree-id='choose-a-way-to-pay'] {
+      display: none !important;
+    }
+
+    strong {
+      color: var(--grey-900);
+    }
+  }
+}
+
+.message {
+  :global {
+    h2 {
+      font-size: var(--font-size-h4);
+    }
+    h2 > div {
+      position: relative !important;
+    }
+  }
+}
+
+.row {
+  @include make-row;
+}
+
+.col {
+  @include make-col-ready;
+  @include make-col(12);
+}
+
+.order-total {
+  padding: 4px 0;
+}

@@ -1,0 +1,44 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.footer {
+    @include make-row;
+    margin-bottom: 35px;
+    margin-top: 25px;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 100px;
+        margin-top: 70px;
+    }
+}
+
+.tip {
+    @include make-col-ready;
+    @include make-col(12);
+    @include text-small;
+    align-items: center;
+    color: $colour-black;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+        @include text-med;
+        margin-bottom: 0;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    img {
+        margin-right: 16px;
+    }
+}

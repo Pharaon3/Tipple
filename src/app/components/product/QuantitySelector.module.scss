@@ -1,0 +1,16 @@
+
+.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.quantity {
+    display: inline-block;
+    text-align: center;
+    width: 20px;
+}

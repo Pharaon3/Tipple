@@ -1,0 +1,16 @@
+.btn {
+    background: var(--white);
+    border-color: var(--primary);
+    color: var(--primary);
+
+    &:hover,
+    &:active:focus {
+        background: var(--white);
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+}
+
+.top {
+    background: repeating-linear-gradient(var(--primary), var(--primary) 90.1%, #ffffff 9.9%, #ffffff 100%);
+}

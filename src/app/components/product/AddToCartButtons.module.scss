@@ -1,0 +1,25 @@
+
+.add {
+    :global {
+        .btn.add:before {
+        opacity: 0;
+        font-family: 'FontAwesome';
+        position : absolute;
+        content: '\f00c';
+        right: -20px;
+        top: 5px;
+        transition: all 3s ease;
+        }
+
+        .btn.add:active:before {
+            opacity: 1;
+            right: 10%;
+            transition: 0s;
+        }
+
+        .btn.out-of-stock {
+            background: #c4c4c4;
+            border-color: #c4c4c4;
+        }
+    }
+}

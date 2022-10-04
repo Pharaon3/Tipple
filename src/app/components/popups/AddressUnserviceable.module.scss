@@ -1,0 +1,37 @@
+@import 'sass/variables/breakpoints';
+@import 'sass/variables/colours';
+@import 'sass/mixins/tipple';
+
+.overlay {
+    @include modal-overlay;
+}
+
+.content {
+    max-width: 420px;
+    display: block;
+    min-width: 320px;
+    z-index: 1003;
+    opacity: 1;
+    position: relative !important;
+    margin: auto;
+    overflow: auto !important;
+
+    h1 {
+        color: var(--primary);
+    }
+
+    :global {
+        .ui-dialog-title h1 {
+            padding: 0 24px;
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        position: fixed !important;
+    }
+}
+
+.body {
+    color: var(--font-color-900);
+}

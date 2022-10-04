@@ -1,0 +1,311 @@
+
+@mixin form-field() {
+    position: relative;
+    z-index: 1;
+
+    label {
+        position: absolute;
+        left: 0;
+        top: 28px;
+        font-weight: 400;
+        color: #373a3c;
+
+        &[data-touched="1"] {
+            font-size: 11px;
+            transform: translateY(-20px);
+        }
+    }
+    
+    input + label {
+        top: 12px;
+    }
+
+    input {
+        margin: 16px 0 0;
+        width: 100%;
+        display: block;
+        border: none;
+        padding: 13px 0;
+        padding-bottom: 8px;
+        border-bottom: solid 1px #757575;
+        transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        background: linear-gradient(to bottom, #373a3c,var(--primary) 4%);
+        background-position: -100vw 0;
+        background-size: 100vw 100%;
+        background-repeat: no-repeat;
+        color: #373a3c;
+    }
+    input:focus ~ label,
+    input .ng-valid ~ label {
+        font-size: 11px;
+        transform: translateY(-20px);
+        transition: all 0.5s;
+        color: #373a3c;
+    }
+    input:focus {
+        border-bottom: solid 1px #373a3c !important;
+    }
+    input.ng-valid.ng-touched ~ label,
+    input.ng-valid.ng-dirty.ng-touched ~ label {
+        transform: translateY(-20px);
+        font-size: 11px;
+    }
+    input.ng-invalid.ng-dirty.ng-touched ~ label {
+        transform: translateY(-20px);
+        font-size: 11px;
+    }
+    input.ng-untouched {
+        border-color: #757575;
+    }
+    input.invalid + label {
+        color: #db4437;
+    }
+    
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+    
+    input[type=checkbox], input[type=radio] {
+        overflow: initial;
+    }
+    
+    input[type=checkbox] {
+        display: none;
+    }
+    input[type=checkbox] + label {
+        display: block;
+        position: relative;
+        font-weight: 400;
+        margin: 8px 8px 8px 0px;
+        color: #373a3c;
+        font-size: 16px;
+    }
+    input[type=checkbox] + label:hover {
+        cursor: pointer;
+    }
+    input[type=checkbox] + label:before {
+        content: "";
+        display: inline-block;
+        position: relative;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #757575;
+        border-radius: 2px;
+        margin: 0px 16px 0px 0px;
+        top: 4px;
+    }
+    input[type=checkbox]:checked + label:before {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+        animation: ripple-stay 1.5s ease-out;
+    }
+    input[type=checkbox]:checked + label:after {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        font-family: "Material Icons";
+        color: white;
+        content: "\e876";
+        // Tick
+        font-size: 18px;
+    }
+    
+    input[type=radio] {
+        display: none;
+    }
+    input[type=radio] + label {
+        display: block;
+        position: relative;
+        font-weight: 400;
+        margin: 8px 8px 8px 0px;
+        color: #373a3c;
+        font-size: 16px;
+    }
+    input[type=radio] + label:hover {
+        cursor: pointer;
+    }
+    input[type=radio] + label:before {
+        content: "";
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #757575;
+        border-radius: 100%;
+        margin: 0px 8px 0px 0px;
+        top: 4px;
+    }
+    input[type=radio]:checked + label:before {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #F57153;
+        animation: ripple-stay 1.5s ease-out;
+    }
+    input[type=radio]:checked + label:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: #F57153;
+        border-radius: 100%;
+        position: absolute;
+        left: 5px;
+        top: 9px;
+    }
+    
+    textarea {
+        resize: none;
+        margin: 12px 0px;
+        width: 100%;
+        border: none;
+        padding: 16px 0;
+        border-bottom: solid 1px #E0E0E0;
+        background-repeat: no-repeat;
+        color: #212121;
+        outline: 0px !important;
+        -webkit-appearance: none;
+    }
+    textarea.invalid:focus,
+    textarea.ng-valid:focus,
+    textarea:focus {
+        transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        background: linear-gradient(to bottom, #373a3c, #F57153 4%);
+        transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        border-color: #757575;
+        background-position: -100vw 0;
+        background-size: 100vw 100%;
+        background-repeat: no-repeat;
+    }
+    textarea.invalid:focus ~ label,
+    textarea.ng-valid:focus ~ label,
+    textarea:focus ~ label {
+        font-size: 11px;
+        transform: translateY(-20px);
+        transition: all 0.5s;
+        color: #373a3c;
+    }
+    textarea.ng-invalid,
+    textarea.ng-valid {
+        border-color: #757575;
+        background: linear-gradient(to bottom, #373a3c, #db4437 4%);
+        background-position: -100vw 0;
+        background-size: 100vw 100%;
+        background-repeat: no-repeat;
+    }
+    textarea.ng-valid.ng-dirty.ng-touched ~ label {
+        transform: translateY(-20px);
+        font-size: 11px;
+    }
+    textarea.ng-invalid.ng-dirty.ng-touched ~ label {
+        transform: translateY(-20px);
+        font-size: 11px;
+    }
+    textarea.ng-untouched {
+        border-color: #E0E0E0;
+    }
+    textarea.invalid + label {
+        color: #db4437;
+    }
+}
+
+@mixin form-error() {
+    color: $colour-danger;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 16px;
+    margin-top: 5px;
+
+    .message {
+        flex: 1;
+    }
+
+    .icon {
+        flex: 0;
+    }
+
+    :global {
+        .fa {
+            padding-top: 2px;
+        }
+    }
+}
+@mixin form-hint() {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+@mixin form-button-submit() {
+    @include btn-cta;
+    @include button-variant($colour-spritz, $colour-spritz);
+    background-color: var(--primary);
+    border-color: var(--primary);
+    outline: none;
+    width: 100%;
+
+    &:disabled {
+        background-color: var(--primary-300);
+        border-color: var(--primary-200);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background-color: var(--primary-600);
+        border-color: var(--primary-500);
+        outline: none;
+    }
+}
+
+@mixin form-button-disabled() {
+    @include btn-cta;
+    @include button-variant($colour-text-base, $colour-text-base);
+/*    background-color: var(--primary);
+    border-color: var(--primary);
+    outline: none;
+    width: 100%;
+
+    &:disabled {
+        background-color: var(--primary-300);
+        border-color: var(--primary-200);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background-color: var(--primary-600);
+        border-color: var(--primary-500);
+        outline: none;
+    }*/
+}
+
+@mixin form-button-cancel() {
+    @include btn-cta;
+    @include button-variant($colour-white, $colour-spritz, $colour-white);
+    background-color: var(--white);
+    border-color: var(--primary-500);
+    color: var(--primary);
+    width: 100%;
+
+    &:disabled {
+        background-color: var(--white);
+        border-color: var(--primary-200);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active  {
+        background-color: var(--primary-600);
+        border-color: var(--primary-500);
+        color: var(--white);
+    }
+}

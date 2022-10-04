@@ -1,0 +1,8 @@
+User-agent: rogerbot
+Disallow:
+User-agent: Screaming Frog SEO Spider
+Disallow:
+User-agent: bloced.default
+Disallow: /
+User-agent: *
+Disallow: /

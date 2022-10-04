@@ -1,0 +1,302 @@
+//Brand colours
+$brand-100:             #fff;
+$brand-200:             #fcd8d0;
+$brand-300:             #f8a18d;
+$brand-400:             #f78970;
+$brand-500:             #f57153;
+$brand-600:             #f35936;
+$brand-700:             #f24119;
+$brand-800:             #df340d;
+$brand-900:             #c22d0b;
+
+//Background brand colours
+.brand-bg {
+    background-color: $brand-500
+}
+
+.brand-bg-100 {
+    background-color: $brand-100;
+}
+
+.brand-bg-200 {
+    background-color: $brand-200;
+}
+
+.brand-bg-300 {
+    background-color: $brand-300;
+}
+
+.brand-bg-400 {
+    background-color: $brand-400;
+}
+
+.brand-bg-500 {
+    background-color: $brand-500;
+}
+
+.brand-bg-600 {
+    background-color: $brand-600;
+}
+
+.brand-bg-700 {
+    background-color: $brand-700;
+}
+
+.brand-bg-800 {
+    background-color: $brand-800;
+}
+
+.brand-bg-900 {
+    background-color: $brand-900;
+}
+
+//Font brand colours
+
+.brand-text {
+    color: $brand-500
+}
+
+.brand-text-100 {
+    color: $brand-100;
+}
+
+.brand-text-200 {
+    color: $brand-200;
+}
+
+.brand-text-300 {
+    color: $brand-300;
+}
+
+.brand-text-400 {
+    color: $brand-400;
+}
+
+.brand-text-500 {
+    color: $brand-500;
+}
+
+.brand-text-600 {
+    color: $brand-600;
+}
+
+.brand-text-700 {
+    color: $brand-700;
+}
+
+.brand-text-800 {
+    color: $brand-800;
+}
+
+.brand-text-900 {
+    color: $brand-900;
+}
+
+.brand-text-black {
+    color: #181818;
+}
+
+.border-left-primary {
+    border-left: 1px solid #EEEEEE
+}
+
+.border-right-primary {
+    border-right: 1px solid #EEEEEE
+}
+
+.border-top-primary {
+    border-top: 1px solid #EEEEEE
+}
+
+.border-bottom-primary {
+    border-bottom: 1px solid #EEEEEE
+}
+
+.border-primary {
+    border: 1px solid #EEEEEE
+}
+
+/**
+ * Table Row for Vertical Middle
+ */
+
+.is-table-row {
+    display: table;
+    width: calc(100% + 24px);
+}
+.is-table-row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .is-table-row .visible-xs {
+        display: table-cell !important;
+    }
+}
+
+/**
+ * Margin and Padding helpers
+ */
+
+$porm: p m;
+$pmTypes: x t b r l y;
+$paddingMultiplyer: 1;
+
+@each $pm in $porm {
+    @each $t in $pmTypes {
+        @for $i from 0 through 24 {
+            $sel: padding;
+            @if $pm == "p" {
+                $sel: padding;
+            } @else if $pm == "m"{
+                $sel: margin;
+            }
+            .#{$pm}#{$t}-#{$i} {
+                @if $t == "x" {
+                    #{$sel}: $paddingMultiplyer * $i + px !important;
+                } @else if $t == "t" {
+                    #{$sel}-top: $paddingMultiplyer * $i + px !important;
+                } @else if $t == "r" {
+                    #{$sel}-right: $paddingMultiplyer * $i + px !important;
+                } @else if $t == "b" {
+                    #{$sel}-bottom: $paddingMultiplyer * $i + px !important;
+                } @else if $t == "l" {
+                    #{$sel}-left: $paddingMultiplyer * $i + px !important;
+                } @else if $t == "y" {
+                    #{$sel}-left: $paddingMultiplyer * $i + px !important;
+                    #{$sel}-right: $paddingMultiplyer * $i + px !important;
+                }
+
+            }
+        }
+    }
+}
+
+@each $pm in $porm {
+    @each $t in $pmTypes {
+        @for $i from 1 through 100 {
+            $sel: margin;
+
+            .#{$pm}#{$t}-#{$i}vh {
+                @if $t == "x" {
+                    #{$sel}: $paddingMultiplyer * $i + vh !important;
+                } @else if $t == "t" {
+                    #{$sel}-top: $paddingMultiplyer * $i + vh !important;
+                } @else if $t == "r" {
+                    #{$sel}-right: $paddingMultiplyer * $i + vh !important;
+                } @else if $t == "b" {
+                    #{$sel}-top: $paddingMultiplyer * $i + vh !important;
+                } @else if $t == "l" {
+                    #{$sel}-top: $paddingMultiplyer * $i + vh !important;
+                } @else if $t == "y" {
+                    #{$sel}-left: $paddingMultiplyer * $i + vh !important;
+                    #{$sel}-right: $paddingMultiplyer * $i + vh !important;
+                }
+
+            }
+        }
+    }
+}
+
+/**
+ * Font size helpers
+ */
+@for $i from 20 through 45 {
+    .font-size-#{$i} {
+        font-size: $i + px !important;
+    }
+}
+
+@for $i from 0 through 32 {
+    .lh#{$i} {
+        line-height: $i + px !important;
+    }
+}
+
+.font-size-icon {
+    font-size: $font-size-icon;
+}
+
+
+/**
+ * Styled SPLIT OR HR
+ */
+.split-1 {
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+    height: 1px;
+    margin: 15px 0px 15px 0px;
+}
+
+.split-0 {
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+    height: 1px;
+    margin: 0px 0px 0px 0px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.material-click {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 120px;
+        height: 120px;
+        margin-left: -60px;
+        margin-top: -60px;
+        background: #f78970;
+        border-radius: 100%;
+        opacity: .6;
+
+        transform: scale(0);
+    }
+
+    &:not(:active):after {
+        animation: ripple 1.5s ease-out;
+    }
+
+    &:after {
+        visibility: hidden;
+    }
+
+    &:focus:after {
+        visibility: visible;
+    }
+}
+
+.material-click.default:after {
+    background: #FAFAFA;
+}
+
+.div-center {
+    margin: auto;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

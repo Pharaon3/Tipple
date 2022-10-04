@@ -1,0 +1,175 @@
+.container {
+  color: rgba(0, 0, 0, 0.85);
+  flex: auto;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  & > header, & > main, & > footer {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    & > div {
+      align-items: center;
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+    }
+  }
+
+  & > header {
+    background-color: var(--splash-bg);
+    color: var(--white);
+    padding: 2.571em 0 0 0;
+    display: block;
+
+    h1 {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 2.2em;
+      line-height: 1.250em;
+      margin: 0 0 0.250em 0;
+
+      @media (min-width: 520px) {
+        font-size: 3.429em;
+      }
+    }
+
+    p {
+      font-size: 1.143em;
+      max-width: 32.500em;
+      margin: 0 0 0.750em 0;
+
+      small {
+        font-size: 1em;
+        line-height: 1.429em;
+        margin-top: 0.750em;
+        a {
+          color: var(--white);
+          font-weight: bold;
+        }
+      }
+    }
+
+    img {
+      max-width: 21.643em;
+      max-height: 19.214em;
+      margin-top: 0.750em;
+      margin-bottom: -7.714em;
+      object-fit: contain;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  & > main {
+    background-color: var(--white);
+    padding: 2.571em 0;
+    margin-top: 7.714em;
+    flex: none;
+
+    h2 {
+      color: rgba(0, 0, 0, 0.75);
+      font-size: 1.8em;
+      font-style: italic;
+      line-height: 1.333em;
+      margin: 0 0 0.353em 0;
+
+      @media (min-width: 520px) {
+        font-size: 2.571em;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        flex: 1 1;
+        margin: 0 0.857em;
+
+        img {
+          object-fit: contain;
+          width: 100%;
+          max-width: 25em;
+          max-height: 17.857em;
+        }
+
+        h3 {
+          font-size: 1.429em;
+          line-height: 1.400em;
+          margin: 0 0 0.600em 0;
+          max-width: 26.000em;
+        }
+
+        p {
+          max-width: 37.143em;
+        }
+      }
+
+      @media(min-width: 990px) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  & > footer {
+    background-color: var(--light-bg);
+    padding: 2.571em 0;
+    display: block;
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.8em;
+      font-style: italic;
+      line-height: 1.176em;
+      margin: 0 0 0.353em 0;
+
+      @media (min-width: 520px) {
+        font-size: 2.429em;
+      }
+    }
+    
+    p {
+      font-size: 1.143em;
+      line-height: 1.500em;
+      margin: 0 0 0.750em 0;
+    }
+  }
+}
+
+// address search fix
+:root {
+  :global {
+    #homepage {
+      padding-bottom: 0;
+    }
+    .landing-address-search {
+      margin: 1em 0 2em 0;
+      max-width: 37.143em;
+      width: 100%;
+      .landing-address-search-input {
+        color: rgba(0, 0, 0, 0.85);
+      }
+
+      .field.error-message {
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        margin-top: 1em;
+        width: 100%;
+        div.fa {
+          margin: 0 1em;
+        }
+      }
+    }
+  }
+}

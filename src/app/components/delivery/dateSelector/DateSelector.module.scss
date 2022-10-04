@@ -1,0 +1,33 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.loading {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.selector {
+    margin-top: 10px;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 0;
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+}
+
+.separator {
+    border-top: 1px solid rgb(224, 224, 224);
+    margin: 2px auto 15px;
+    width: 90%;
+}

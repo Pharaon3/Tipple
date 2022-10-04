@@ -1,0 +1,186 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+@import 'sass/mixins/skeleton-loader';
+
+$colour-grey-light: #eee;
+
+
+@keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+}
+
+@mixin box-shadow-card() {
+    box-shadow: 0px 1px 12px rgba(0,0,0,.06);
+}
+
+// Including element requires position: relative
+@mixin shadow-hover() {
+    &::before {
+        @include box-shadow-card;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: opacity .3s ease-in-out;
+        width: 100%;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.card {
+    @include box-shadow-card;
+    @include shadow-hover;
+    background: $colour-card-bg;
+    border: 1px solid $colour-grey-light;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+
+    // Link tag
+    > a {
+        color: $colour-text-base;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    &.out-of-stock {
+        .image {
+            opacity: 0.6;
+        }
+    }
+
+    .image {
+        align-items: center; /* default is 'stretch', and Safari borks it up */
+        display: flex;
+        height: 163px;
+        justify-content: center;
+        padding: 8px 0 12px;
+        text-align: center;
+
+        @include media-breakpoint-up(sm) {
+            height: 180px;
+            padding: 12px 0 20px;
+        }
+
+        @include media-breakpoint-up(md) {
+            height: 225px;
+            padding: 28px 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 249px;
+            padding: 12px 0 20px;
+        }
+    
+        img {
+            display: block;
+            height: auto;
+            max-height: 100%;
+            max-width: 80%;
+            min-height: 0;
+        }
+    }
+    
+    .details {
+        background: $colour-white;
+        display: flex;
+        flex: 1 0 90px;
+        flex-direction: column;
+        font-size: var(--font-size-product-small);
+        justify-content: center;
+        padding: 6px 12px;  // 12px 30px;
+        position: relative;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            flex: 1 0 110px;
+            font-size: var(--font-size-product);
+        }
+
+        > p {
+            margin-bottom: 6px;
+        }
+    }
+
+    .block-with-text {
+        /* hide text if it more than N lines  */
+        overflow: hidden;
+        /* for set '...' in absolute position */
+        position: relative; 
+        /* use this value to count block height */
+        line-height: 1.2em;
+        /* max-height = line-height (1.2) * lines max number (3) */
+        max-height: 3.6em; 
+        height: 3.6em;
+        margin-right: -1em;
+        padding-right: 1em;
+    }
+    
+    .price {
+        color: $colour-text-dark;
+        width: 100%;
+    
+        .strikethrough {
+            @include text-body-small;
+            text-decoration: line-through;
+        }
+    
+        .sale {
+            color: $colour-sale-red;
+            margin-left: 4px;
+        }
+    }
+}
+
+.loader {
+    @include box-shadow-card;
+    align-items: center;
+    background: $colour-white;
+    border: 1px solid $colour-grey-light;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 40px 12px 30px;
+}
+
+.skeleton {
+    @include skeleton-loader();
+
+    &.image {
+        height: 145px;
+        width: 100px;
+    }
+
+    &.text {
+        height: 18px;
+        margin-top: 40px;
+        width: 70%;
+    }
+
+    &.price {
+        height: 22px;
+        margin-top: 50px;
+        width: 30%;
+    }
+}

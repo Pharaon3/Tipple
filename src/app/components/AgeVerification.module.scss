@@ -1,0 +1,45 @@
+.wrap {
+    background: #fff;
+    margin-bottom: 40px;
+    padding: 50px 0 100px;
+
+    .gate {
+        margin: 0 auto;
+        max-width: 345px;
+        padding: 0 20px;
+
+        @media screen and (min-width: 768px) {
+            padding: 0;
+        }
+
+        > h3 {
+            color: var(--grey-900);
+            font-size: var(--font-size-h4);
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        > p {
+            color: var(--grey-900);
+            line-height: 19px;
+            text-align: center;
+
+            @media screen and (min-width: 1200px) {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        :global {
+            label.touched {
+                transform: translateY(-20px);
+                font-size: 11px;
+            }
+        }
+    }
+
+    .submit {
+        padding-top: 30px;
+    }
+}

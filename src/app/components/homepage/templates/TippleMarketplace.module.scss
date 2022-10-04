@@ -1,0 +1,34 @@
+.btn {
+    box-shadow: none;
+}
+
+.btn-cta {
+    background: var(--primary-500) !important;
+    color: var(--white) !important;
+    height: auto;
+    width: auto;
+
+    &:hover {
+        background: var(--primary-600) !important;
+    }
+}
+
+.top {
+    background: repeating-linear-gradient(var(--peachy), var(--peachy) 90.1%, #ffffff 9.9%, #ffffff 100%);
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    .heading {
+        color: var(--text-headings);
+    }
+
+    .hero {
+        width: 560px;
+    }
+}

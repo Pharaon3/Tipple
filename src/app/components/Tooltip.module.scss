@@ -1,0 +1,38 @@
+@import 'sass/_mixins';
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    &:hover {
+        .text {
+            visibility: visible;
+        }
+    }
+}
+
+/* Tooltip text */
+.text {
+    visibility: hidden;
+    width: auto;
+    min-width: 180px;
+    max-width: 250px;
+    background-color: #3B4B57;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    top:25px;
+    left:-10px;
+    position: absolute;
+    z-index: 1;
+
+    @include media-breakpoint-up(sm) {
+        width: 250px;
+    }
+
+    &.visible {
+        visibility: visible;
+    }
+}

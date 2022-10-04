@@ -1,0 +1,15 @@
+@mixin shadow-light() {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+@mixin shadow-card-light() {
+    box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.15), 0 0 0 1px rgba(63, 63, 68, 0.05);
+}
+
+@mixin shadow-card-medium() {
+    box-shadow: 0 2px 4px 0 rgba(63, 63, 68, 0.15), 0 1px 9px 1px rgba(63, 63, 68, 0.05);
+}
+
+@mixin shadow-card-heavy() {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+}

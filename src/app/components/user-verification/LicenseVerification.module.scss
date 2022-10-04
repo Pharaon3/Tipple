@@ -1,0 +1,117 @@
+@import 'sass/_colours';
+@import 'sass/_mixins';
+
+.field {
+  @include form-field;
+  margin-bottom: 20px;
+
+  input[type='checkbox'] + label {
+    margin-left: 30px;
+    padding-top: 2px;
+    &::before {
+      position: absolute;
+      left: -28px;
+    }
+    &::after {
+      position: absolute;
+      left: -28px !important;
+    }
+  }
+}
+span {
+  color: #f57153;
+}
+.checkboxes {
+  margin-top: 50px;
+
+  .field {
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+    }
+  }
+
+  .error {
+    margin-bottom: 20px;
+    margin-top: -15px;
+
+    // FIXME: This is hacky. Shouldn't be aware of the internal HTML structure of FieldError component. Find a better way.
+    > div {
+      &:first-of-type {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.errors {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.failed {
+  text-align: center;
+  color: red;
+  margin-top: 40px;
+  p {
+    margin: 0;
+  }
+}
+.hint {
+  @include form-hint;
+}
+
+.submit {
+  @include form-button-submit;
+}
+
+.hint {
+  @include form-hint;
+}
+.input {
+  margin-bottom: 4px !important;
+}
+
+.btnVerify {
+  @include form-button-submit;
+  display: block;
+  margin-right: 24px;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+.required {
+  color: $colour-spritz;
+}
+
+.stateselect {
+  margin: 16px 0 0;
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 13px 0;
+  padding-bottom: 8px;
+  border-bottom: solid 1px #757575;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: linear-gradient(to bottom, #373a3c, var(--primary) 4%);
+  background-position: -100vw 0;
+  background-size: 100vw 100%;
+  background-repeat: no-repeat;
+  color: #373a3c;
+}
+.stateselect:focus-visible {
+  outline: unset;
+}
+.stateselect:focus ~ .statelabel {
+  font-size: 11px;
+  transform: translateY(-20px);
+  transition: all 0.5s;
+  color: #373a3c;
+}
+
+.statelabel {
+  top: 8px !important;
+}
+.ui-dropdown-items-wrapper {
+  background-color: white;
+}

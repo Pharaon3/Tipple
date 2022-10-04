@@ -1,0 +1,31 @@
+@import 'sass/_colours';
+@import 'sass/animations/slow-pulse';
+
+.blocks {
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    background: var(--grey-300);
+    border-radius: 8px;
+    flex: 1;
+    height: 8px;
+    margin-left: 8px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &.complete,
+    &.active {
+        background: var(--primary);
+    }
+
+    &.active {
+        animation: slow-pulse 3s infinite;
+        opacity: 0.4;
+        transform: scale(1);
+    }
+}
+

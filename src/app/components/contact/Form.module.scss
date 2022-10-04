@@ -1,0 +1,48 @@
+.wrap {
+    :global {
+        h2 {
+            font-size: var(--font-size-h5);
+        }
+
+        .form-submitted {
+            background: #fff;
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            text-align: center;
+            color: var(--primary-500);
+    
+            .form-content {
+                margin: auto;
+                position: absolute;
+                width: 90%;
+                height: 30%;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                color: var(--primary-500);
+            }
+        }
+    
+        form {
+            padding-bottom: 15px;
+            text-align: left;
+        }
+    
+        input+label {
+            top: 12px !important;
+        }
+    
+        label.touched {
+            transform: translateY(-20px);
+            font-size: 11px;
+        }
+    }
+}

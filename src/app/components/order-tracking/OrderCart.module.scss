@@ -1,0 +1,142 @@
+@import 'sass/_mixins';
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.info {
+    border-bottom: 1px solid var(--grey-200);
+    padding: 20px 16px;
+
+    strong {
+        display: block;
+        font-size: var(--font-size-h6);
+    }
+
+    span {
+        font-size: var(--font-size-body-2);
+    }
+
+    i {
+        width:48px;
+    }
+
+    a,a:hover,a:active,a:visited {
+        color: var(--grey-900);
+        text-decoration:none;
+    }
+}
+
+.infoBlock {
+    display:flex;
+    margin-top:12px
+}
+
+.infoDetail {
+    display:inline-block;
+}
+
+.storeAddress {
+    border-bottom: 1px solid var(--grey-200);
+    padding: 20px 16px;
+
+    strong {
+        display: block;
+        font-size: var(--font-size-h6);
+    }
+
+    span {
+        font-size: var(--font-size-body-2);
+    }
+}
+
+.storePhone {
+    border-bottom: 1px solid var(--grey-200);
+    padding: 20px 16px;
+
+    strong {
+        display: block;
+        font-size: var(--font-size-h6);
+    }
+
+    span {
+        font-size: var(--font-size-body-2);
+    }
+}
+
+.cart {
+    .row {
+        border-bottom: 1px solid var(--grey-200);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .item {
+        align-items: center;
+        display: flex;
+        padding: 8px;
+
+        &.bundleItem {
+            padding-left: 50px;
+
+            .price {
+                color: var(--grey-700);
+                font-size: var(--font-size-caption);
+            }
+
+            .sale {
+                color: var(--grey-500);
+                font-size: var(--font-size-overline);
+            }
+        }
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        margin-right: 8px;
+        width: 60px;
+
+        img {
+            flex: 0;
+            height: 45px;
+        }
+    }
+
+    .qty {
+        flex: 0;
+        font-size: var(--font-size-body-2);
+        font-weight: 500;
+        margin-right: 8px;
+        width: 30px;
+    }
+
+    .name {
+        color: var(--grey-600);
+        flex: 1;
+        font-size: var(--font-size-body-2);
+    }
+
+    .pricing {
+        display: none;
+        flex: 0;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    .sale {
+        color: var(--grey-600);
+        font-size: var(--font-size-body-2);
+        margin-right: 8px;
+        text-decoration: line-through;
+    }
+
+    .price {
+        color: var(--grey-900);
+    }
+}

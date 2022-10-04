@@ -1,0 +1,8 @@
+User-agent: rogerbot
+Disallow:
+User-agent: Screaming Frog SEO Spider
+Disallow:
+User-agent: 7eleven.tipple.xyz
+Disallow: /
+User-agent: *
+Disallow: /

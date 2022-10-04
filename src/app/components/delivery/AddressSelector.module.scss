@@ -1,0 +1,221 @@
+.wrap {
+    :global {
+        .change-button {
+            position: absolute;
+            right: 0;
+            margin-right: 10px;
+            background: #FFF;
+        }
+    
+        .cart-input-container {
+            display: flex;
+            font-weight: bold;
+    
+            > span {
+                color: var(--grey-900);
+                line-height: 24px;
+                margin-right: 10px;
+            }
+    
+            > input {
+                line-height: 22px;
+                flex-grow: 1;
+            }
+        }
+        
+        button.address-search {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            transition: box-shadow 0.2s ease-in;
+            font-size: 12px;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .cart-search-address {
+        
+            a {
+                color: var(--primary-500);
+            }
+        
+            & input {
+                background: #FFF;
+                border: none;
+                border-bottom: none;
+                transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+                background-position: -100vw 0;
+                background-size: 100vw 100%;
+                background-repeat: no-repeat;
+                color: #757575 !important;
+                text-overflow: ellipsis;
+                font-weight: 500;
+                &.invalid:focus,
+                &:focus {
+                    box-shadow: none;
+                    outline: none;
+                    background-position: 0 0;
+                    &::-webkit-input-placeholder {
+                        color: #373a3c;
+                        font-size: 11px;
+                        visibility: visible;
+                        transition: all 0.5s;
+                    }
+                }
+        
+                &.ng-invalid {
+                    border-color: #db4437;
+                    background-position: -100vw 0;
+                    background-size: 100vw 100%;
+                    background-repeat: no-repeat;
+                    border-bottom: none !important;
+                }
+        
+                &.invalid + label {
+                    color:#db4437;
+                }
+        
+                &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: #F44336;
+                font-weight: normal;
+                }
+                &::-moz-placeholder { /* Firefox  */
+                color: #F44336;
+                font-weight: normal;
+                }
+                &:-ms-input-placeholder { /* IE */
+                color: #F44336;
+                font-weight: normal;
+                }
+                &:-moz-placeholder { /* Firefox 18- */
+                color: #F44336;
+                font-weight: normal;
+                }
+                &.edit {
+                    background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, var(--primary-500) 4%);
+                }
+            }
+        
+            ul {
+                list-style-type: none;
+                cursor: pointer;
+            }
+        }
+        
+        .address-search .error-message{
+            color: #F44336;
+            font-size: 12px;
+            margin-top: -17px;
+            padding: 0;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .cart-search-address .error-message{
+            text-align: left;
+            display: inline-block;
+            padding: 4px 12px;
+            color: red;
+        }
+        
+        .pac-container { //google input
+            background-color: #FFF;
+            z-index: 20;
+            position: fixed;
+            display: inline-block;
+            float: left;
+        }
+        
+        .popup {
+            & input {
+            margin: 5px 0px;
+            width: 100%;
+            display: block;
+            border: none;
+            padding: 10px 0;
+            border-bottom: none;
+            transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, var(--primary-500) 4%);
+            background-position: -100vw 0;
+            background-size: 100vw 100%;
+            background-repeat: no-repeat;
+            color: #34495e;
+            text-overflow: ellipsis;
+            border-bottom: solid 1px #E0E0E0;
+            float: left;
+            width: 70%;
+            &.invalid:focus,
+            &:focus {
+                box-shadow: none;
+                outline: none;
+                background-position: 0 0;
+                &::-webkit-input-placeholder {
+                    color: #E0E0E0;
+                    font-size: 11px;
+                    visibility: visible;
+                    transition: all 0.5s;
+                }
+            }
+        
+            &.ng-invalid {
+                border-color: #db4437;
+                background-position: -100vw 0;
+                background-size: 100vw 100%;
+                background-repeat: no-repeat;
+                border-bottom: none !important;
+            }
+            &.edit {
+                background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, var(--primary-500) 4%);
+            }
+        
+            }
+        }
+    
+        .autocomplete-dropdown-container {
+            background-color: #fff;
+            position: absolute!important;
+            z-index: 1000;
+            border-radius: 2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow: hidden;
+            width: calc(100% - 10px);
+        }
+    
+        .suggestion-item {
+            cursor: default;
+            padding: 0 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 30px;
+            text-align: left;
+            border-top: 1px solid #e6e6e6;
+            font-size: 11px;
+            color: #999;
+        }
+    
+        .suggestion-item-marker {
+            width: 15px;
+            height: 20px;
+            margin-right: 7px;
+            margin-top: 6px;
+            display: inline-block;
+            vertical-align: top;
+            background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+            background-size: 34px;
+            background-position: -1px -161px;
+        }
+    
+        .suggestion-item-query {
+            font-size: 13px;
+            padding-right: 3px;
+            color: #000;
+        }
+    
+        .autocomplete-dropdown-container {
+            margin-top: 35px;
+        }
+    }
+}
